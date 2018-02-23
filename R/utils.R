@@ -1,5 +1,5 @@
 createCalls <- function(x) {
-  x <- map_chr(x, stringr::str_trim)
+  x <- purrr::map_chr(x, stringr::str_trim)
   calls <- list()
   for (i in 2:(length(x))) {
     if (grepl("group_by", x[i])) next
@@ -18,11 +18,11 @@ createViewTitles <- function(steps) {
   stepInds <- 2:(length(steps) - gbs)
   steps <- tail(purrr::map(strsplit(steps, "\\("), `[[`, 1), -1) %>%
     purrr::discard(~grepl("group_by", .)) %>%
-    purrr::map_chr(str_trim)
+    purrr::map_chr(stringr::str_trim)
   sprintf("%s. %s", (stepInds - 1), steps)
 }
 
 createViews <- function(calls, titles) {
   calls <- sprintf("%s title = '%s')", calls, titles)
-  invisible(purrr::map(calls, ~eval(parse(text = .))))
+  invisible(purrr::safely(purrr::map(calls, ~eval(parse(text = .)))))
 }
