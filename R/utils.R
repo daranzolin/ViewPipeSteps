@@ -1,13 +1,9 @@
 createCalls <- function(x) {
   x <- purrr::map_chr(x, stringr::str_trim)
   calls <- list()
-  for (i in 2:(length(x))) {
+  for (i in 2:length(x)) {
     if (grepl("group_by", x[i])) next
-    if (i != length(x)) {
-      call <- paste(paste(x[1:i], collapse = " "), "View(")
-    } else {
-      call <- paste(paste(x[1:i], collapse = " "), "%>% View(")
-    }
+    call <- paste(paste(x[1:i], collapse = " "), "View(")
     calls[[i]] <- call
   }
   invisible(purrr::discard(calls, is.null))
