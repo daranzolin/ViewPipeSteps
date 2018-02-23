@@ -10,5 +10,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: stringr,
-    purrr
+    purrr,
+    magrittr
 RoxygenNote: 6.0.1
