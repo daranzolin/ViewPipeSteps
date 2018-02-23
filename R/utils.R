@@ -16,7 +16,7 @@ createCalls <- function(x) {
 createViewTitles <- function(steps) {
   gbs <- sum(stringr::str_detect(steps, "group_by"))
   stepInds <- 2:(length(steps) - gbs)
-  steps <- tail(purrr::map(strsplit(x, "\\("), `[[`, 1), -1) %>%
+  steps <- tail(purrr::map(strsplit(steps, "\\("), `[[`, 1), -1) %>%
     purrr::discard(~grepl("group_by", .)) %>%
     purrr::map_chr(str_trim)
   sprintf("%s. %s", (stepInds - 1), steps)
