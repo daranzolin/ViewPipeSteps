@@ -1,0 +1,4 @@
+Name: View Pipe Chain Steps
+Description: Creates Tabs of View Output for Each Pipe Chain Step
+Binding: viewPipeChain
+Interactive: false
