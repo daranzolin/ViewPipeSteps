@@ -4,3 +4,9 @@ The goal of ViewPipeSteps is to help hackers debug pipe chains in a *slightly* m
 
 ![Alt Text](https://media.giphy.com/media/24p7Q2DkFpy5slRhOy/giphy.gif)
 
+# Installation
+
+```
+devtools::install_github("daranzolin/ViewPipeSteps")
+
+```
