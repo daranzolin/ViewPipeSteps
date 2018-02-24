@@ -20,5 +20,12 @@ createViewTitles <- function(steps) {
 
 createViews <- function(calls, titles) {
   calls <- sprintf("%s title = '%s')", calls, titles)
-  invisible(purrr::safely(purrr::map(calls, ~eval(parse(text = .)))))
+  safeEval <- purrr::safely(eval)
+  cList <-  purrr::map(calls, ~safeEval(parse(text = .)))
+  for (i in seq_along(cList)) {
+    if (!is.null(cList[[i]]$error)) {
+      w <- sprintf("Pipe error at step %s: %s", titles[i], cList[[i]]$error)
+      stop(w, call. = FALSE)
+    }
+  }
 }
