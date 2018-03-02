@@ -9,7 +9,7 @@ Description: Debugging pipe chains often consists of viewing the output after ea
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: stringr,
+Imports: stringr (>= 1.3.0),
     purrr,
     magrittr
 RoxygenNote: 6.0.1
