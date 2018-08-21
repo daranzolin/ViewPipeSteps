@@ -29,7 +29,14 @@ findPipeCalls <- function(x) {
   rev(pl)
 }
 
-
+#' @title Creates a View() output for each pipe step in current text selection
+#'
+#' @description
+#'   Reads the currently selected text from the RStudio API and displays a data view
+#'   in the source pane for each pipe step. Meant to be called as a RStudio addin.
+#'
+#' @export
+#'
 viewPipeChain <- function() {
   context <- rstudioapi::getActiveDocumentContext()
   selection <- context$selection[[1]]$text
