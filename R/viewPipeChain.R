@@ -29,15 +29,8 @@ findPipeCalls <- function(x) {
   rev(pl)
 }
 
-#' @title Creates a View() output for each pipe step in current text selection
-#'
-#' @description
-#'   Reads the currently selected text from the RStudio API and displays a data view
-#'   in the source pane for each pipe step. Meant to be called as a RStudio addin.
-#'
-#' @export
-#'
-viewPipeChain <- function() {
+
+processPipeChain <- function(cmd) {
   context <- rstudioapi::getActiveDocumentContext()
   selection <- context$selection[[1]]$text
   tryCatch({
@@ -56,7 +49,10 @@ viewPipeChain <- function() {
                                           collapse = " ")))
         assign(sprintf("ps%d", i), eval(call))
       }
-      eval(parse(text = sprintf("View(ps%d, title = title)", i)))
+      if (i == 1 ||
+          !identical(as.data.frame(get(sprintf("ps%d", i))),
+                     as.data.frame(get(sprintf("ps%d", i - 1)))))
+          eval(parse(text = sprintf(cmd, i)))
     }
   },
   error = function(e) {
@@ -65,3 +61,25 @@ viewPipeChain <- function() {
     return()
   })
 }
+
+#' @title Creates a View() output for each pipe step in current text selection
+#'
+#' @description
+#'   Reads the currently selected text from the RStudio API and displays a data view
+#'   in the source pane for each pipe step. Meant to be called as a RStudio addin.
+#'
+#' @export
+#'
+viewPipeChain <- function() processPipeChain("View(ps%d, title = title)")
+
+#' @title Prints each pipe step in current text selection
+#'
+#' @description
+#'   Reads the currently selected text from the RStudio API and prints the
+#'   dataframe to the console using as.tibble() for each pipe step.
+#'   Meant to be called as a RStudio addin.
+#'
+#' @export
+#'
+printPipeChain <- function()
+  processPipeChain("message(title); print(tibble::as.tibble(ps%d))")
