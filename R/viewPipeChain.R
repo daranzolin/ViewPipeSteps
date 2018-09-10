@@ -49,10 +49,12 @@ processPipeChain <- function(cmd) {
                                           collapse = " ")))
         assign(sprintf("ps%d", i), eval(call))
       }
-      if (i == 1 ||
-          !identical(as.data.frame(get(sprintf("ps%d", i))),
-                     as.data.frame(get(sprintf("ps%d", i - 1)))))
-          eval(parse(text = sprintf(cmd, i)))
+      assign(sprintf("obj%d", i), ifelse(is.data.frame(get(sprintf("ps%d", i))),
+                                         as.data.frame(get(sprintf("ps%d", i))),
+                                         get(sprintf("ps%d", i))))
+      if (i == 1 || !identical(get(sprintf("obj%d", i)),
+                               get(sprintf("obj%d", i- 1))))
+        eval(parse(text = sprintf(cmd, i)))
     }
   },
   error = function(e) {
@@ -82,4 +84,7 @@ viewPipeChain <- function() processPipeChain("View(ps%d, title = title)")
 #' @export
 #'
 printPipeChain <- function()
-  processPipeChain("message(title); print(tibble::as.tibble(ps%d))")
+  processPipeChain(paste("message(title);",
+                         "obj <- ps%d;",
+                         "if (is.data.frame(obj)) obj <- tibble::as.tibble(obj);",
+                         "print(obj)"))

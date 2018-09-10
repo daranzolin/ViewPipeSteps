@@ -1,1 +1,2 @@
 export("viewPipeChain")
+export("printPipeChain")
