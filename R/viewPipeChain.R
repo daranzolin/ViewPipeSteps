@@ -68,21 +68,20 @@ processPipeChain <- function(cmd) {
 #'
 #' @description
 #'   Reads the currently selected text from the RStudio API and displays a data view
-#'   in the source pane for each pipe step. Meant to be called as a RStudio addin.
+#'   in the source pane for each pipe step creating a unique object.
+#'   Meant to be called as an RStudio addin.
 #'
 #' @export
-#'
 viewPipeChain <- function() processPipeChain("View(ps%d, title = title)")
 
 #' @title Prints each pipe step in current text selection
 #'
 #' @description
-#'   Reads the currently selected text from the RStudio API and prints the
-#'   dataframe to the console using as.tibble() for each pipe step.
-#'   Meant to be called as a RStudio addin.
+#'   Reads the currently selected text from the RStudio API and prints
+#'   for each pipe step the resulting object if unique. Data frames are
+#'   converted by as.tibble(). Meant to be called as an RStudio addin.
 #'
 #' @export
-#'
 printPipeChain <- function()
   processPipeChain(paste("message(title);",
                          "obj <- ps%d;",
