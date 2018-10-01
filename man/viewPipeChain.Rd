@@ -8,5 +8,6 @@ viewPipeChain()
 }
 \description{
 Reads the currently selected text from the RStudio API and displays a data view
-  in the source pane for each pipe step. Meant to be called as a RStudio addin.
+  in the source pane for each pipe step creating a unique object.
+  Meant to be called as a RStudio addin.
 }

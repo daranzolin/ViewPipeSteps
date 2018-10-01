@@ -1,3 +1,6 @@
+# Needed for some examples
+library(tidyverse)
+
 # Garabage (should throw parsing error)
 This is no valid R code.
 
