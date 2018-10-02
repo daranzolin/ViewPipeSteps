@@ -16,6 +16,12 @@ devtools::install_github("daranzolin/ViewPipeSteps")
 
 Thanks to the work of Joachim Gassen, `ViewPipeSteps` now supports most piping habits and patterns. Check [tools/test_cases.R for more elaborate examples.](https://github.com/daranzolin/ViewPipeSteps/blob/master/tools/test_cases.R) 
 
+# Print to the console
+
+Prefer to see the outputs in the console? Call the "Print Chain Pipe Steps" addin.
+
+![printPipeSteps](https://media.giphy.com/media/3j0DCfGZRL7s7na0Pu/giphy.gif)
+
 # Future Work
 
 * Support groups and `skimr::skim`
