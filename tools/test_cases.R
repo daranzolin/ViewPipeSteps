@@ -50,6 +50,14 @@ iris %>%
             Petal.Length.min = min(Petal.Length),
             Petal.Width.min = min(Petal.Width)) -> min_iris
 
+# Example from issue #14
+
+diamonds %>%
+  select(carat, cut, color, clarity, price) %>%
+  group_by(color) %>%
+  summarise(n = n(), price = mean(price)) %>%
+  arrange(desc(color))
+
 # Assign with pipe (esoteric, works)
 assign("result", mtcars %>% filter(am == 1) %>% select(qsec))
 
