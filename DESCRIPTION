@@ -5,10 +5,11 @@ Version: 0.1.0
 Author: David Ranzolin [aut, cre], 
   Joachim Gassen [aut]
 Maintainer: David Ranzolin <daranzolin@gmail.com>
-Description: Debugging pipe chains often consists of viewing the output after each step. 
-  This addin automatically creates a View() output of each step.
+Description: Debugging pipe chains often consists of viewing the output after 
+  each step. This package adds RStudio addins and two functions that allow 
+  outputing each or select steps in a convenient way.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: rstudioapi, tibble
-RoxygenNote: 6.0.1
+Imports: dplyr, rstudioapi, tibble
+RoxygenNote: 6.1.1
