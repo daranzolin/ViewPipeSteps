@@ -49,9 +49,14 @@ processPipeChain <- function(cmd) {
                                           collapse = " ")))
         assign(sprintf("ps%d", i), eval(call))
       }
-      assign(sprintf("obj%d", i), ifelse(is.data.frame(get(sprintf("ps%d", i))),
-                                         as.data.frame(get(sprintf("ps%d", i))),
-                                         get(sprintf("ps%d", i))))
+      assign(
+        sprintf("obj%d", i),
+        if (is.data.frame(get(sprintf("ps%d", i)))) {
+          as.data.frame(get(sprintf("ps%d", i)))
+        } else {
+          get(sprintf("ps%d", i))
+        }
+      )
       if (i == 1 || !identical(get(sprintf("obj%d", i)),
                                get(sprintf("obj%d", i- 1))))
         eval(parse(text = sprintf(cmd, i)))
