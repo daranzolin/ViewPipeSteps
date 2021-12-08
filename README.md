@@ -1,5 +1,5 @@
 
-# ViewPipeSteps <img src='man/logo.png' align="right" height="139" />
+# ViewPipeSteps <img src='man/figures/logo.png' align="right" height="139" />
 
 ![CRAN log](http://www.r-pkg.org/badges/version/ViewPipeSteps)
 ![](http://cranlogs.r-pkg.org/badges/grand-total/ViewPipeSteps)
