@@ -1,5 +1,10 @@
 
-# ViewPipeSteps
+# ViewPipeSteps <img src='man/logo.png' align="right" height="139" />
+
+![CRAN log](http://www.r-pkg.org/badges/version/ViewPipeSteps)
+![](http://cranlogs.r-pkg.org/badges/grand-total/ViewPipeSteps)
+
+## Overview
 
 ViewPipeSteps helps to debug pipe chains in a *slightly* more elegant
 fashion. Print/View debugging isn’t sexy, but instead of manually
@@ -116,16 +121,16 @@ diamonds %>%
     ## 6 I      5422 5092.
     ## 7 J      2808 5324.
 
-# Installation
+## Installation
 
     devtools::install_github("daranzolin/ViewPipeSteps")
 
-# More Examples
+## More Examples
 
 Check [tools/test\_cases.R for more elaborate
 examples.](https://github.com/joachim-gassen/ViewPipeSteps/blob/master/tools/test_cases.R)
 
-# Future Work
+## Future Work
 
   - Verify that %P\>% is implemented in a useful way and does it what it
     is supposed to do.
