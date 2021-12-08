@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^tools/test_cases.R$
 ^README.Rmd$
+^CRAN-RELEASE$
+^cran-comments\.md$

@@ -10,6 +10,5 @@ Description: Debugging pipe chains often consists of viewing the output after
   outputing each or select steps in a convenient way.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Imports: dplyr, rstudioapi, tibble
 RoxygenNote: 7.1.0
