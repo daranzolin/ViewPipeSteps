@@ -2,7 +2,7 @@ Package: ViewPipeSteps
 Type: Package
 Title: Create View Tabs of Pipe Chains 
 Version: 0.1.0
-Author: David Ranzolin [aut, cre], 
+Author: David Ranzolin [aut, cre, cph], 
   Joachim Gassen [aut]
 Maintainer: David Ranzolin <daranzolin@gmail.com>
 Description: Debugging pipe chains often consists of viewing the output after 
@@ -12,4 +12,4 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: dplyr, rstudioapi, tibble
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
