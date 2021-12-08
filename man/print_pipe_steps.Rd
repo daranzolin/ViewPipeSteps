@@ -24,7 +24,7 @@ Added as last command to a pipe, prints for each pipe step the resulting
   object to the console if unique. Data frames are converted by as_tibble().
 }
 \examples{
-
+\dontrun{
 if (!require(dplyr)) stop("Examples need dplyr to run")
 mtcars \%>\%
   filter(am == 1) \%>\%
@@ -45,6 +45,5 @@ mtcars \%>\%
     mean_hp = mean(hp),
     mean_mpg = mean(mpg)
   )
-
-
+}
 }

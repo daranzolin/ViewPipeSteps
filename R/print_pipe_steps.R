@@ -19,7 +19,7 @@
 #' @return The unchanged data
 #'
 #' @examples
-#'
+#' \dontrun{
 #' if (!require(dplyr)) stop("Examples need dplyr to run")
 #' mtcars %>%
 #'   filter(am == 1) %>%
@@ -40,8 +40,7 @@
 #'     mean_hp = mean(hp),
 #'     mean_mpg = mean(mpg)
 #'   )
-#'
-#'
+#' }
 #' @export
 print_pipe_steps <- function(.data, cmd = print_command, all = FALSE) {
   # Find pipe call in call stack
