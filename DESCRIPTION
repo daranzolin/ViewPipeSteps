@@ -4,6 +4,10 @@ Title: Create View Tabs of Pipe Chains
 Version: 0.1.0
 Author: David Ranzolin [aut, cre, cph], 
   Joachim Gassen [aut]
+Authors@R: c(
+      person("David", "Ranzolin", email = "daranzolin@gmail.com", role = c("aut", "cre", "ctb")),
+      person("Joachim", "Gassen", role=c("aut"))
+      )
 Maintainer: David Ranzolin <daranzolin@gmail.com>
 Description: Debugging pipe chains often consists of viewing the output after 
   each step. This package adds RStudio addins and two functions that allow 
