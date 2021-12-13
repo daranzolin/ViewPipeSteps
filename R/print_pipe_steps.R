@@ -28,7 +28,7 @@
 #'
 #' my_print_cmd <- c(
 #'   "message(title);",
-#'   "skimr::skim_tee(.data = ps%d)"
+#'   "skimr::skim_tee(data = ps%d)"
 #' )
 #'
 #' mtcars %>%
