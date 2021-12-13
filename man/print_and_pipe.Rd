@@ -9,7 +9,10 @@ lhs \%P>\% rhs
 \arguments{
 \item{lhs}{The left hand side of the pipe.}
 
-\item{rhs}{The right hand side of the pipe}
+\item{rhs}{The right hand side of the pipe.}
+}
+\value{
+called for side effects
 }
 \description{
 This pipe variant prints the object received from the left hand side prior

@@ -76,6 +76,8 @@ processPipeChain <- function(cmd) {
 #'   in the source pane for each pipe step creating a unique object.
 #'   Meant to be called as an RStudio addin.
 #'
+#' @return No return value, called for side effects
+#'
 #' @export
 viewPipeChain <- function() processPipeChain("View(ps%d, title = title)")
 
@@ -85,6 +87,8 @@ viewPipeChain <- function() processPipeChain("View(ps%d, title = title)")
 #'   Reads the currently selected text from the RStudio API and prints
 #'   for each pipe step the resulting object if unique. Data frames are
 #'   converted by as.tibble(). Meant to be called as an RStudio addin.
+#'
+#' @return No return value, called for side effects
 #'
 #' @export
 printPipeChain <- function()

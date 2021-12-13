@@ -39,7 +39,9 @@ print_and_pipe <- function() {
 #' @param lhs
 #'   The left hand side of the pipe.
 #' @param rhs
-#'   The right hand side of the pipe
+#'   The right hand side of the pipe.
+#'
+#' @return called for side effects
 #'
 #' @note
 #'   This code is experimental. Use at your own risk.

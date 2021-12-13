@@ -19,7 +19,7 @@
 #' @return The unchanged data
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' if (!require(dplyr)) stop("Examples need dplyr to run")
 #' mtcars %>%
 #'   filter(am == 1) %>%

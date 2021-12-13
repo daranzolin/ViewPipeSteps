@@ -8,6 +8,9 @@ printPipeChain()
 
 printPipeChain()
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Reads the currently selected text from the RStudio API and prints
   for each pipe step the resulting object if unique. Data frames are

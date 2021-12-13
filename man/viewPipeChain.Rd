@@ -8,6 +8,9 @@ viewPipeChain()
 
 viewPipeChain()
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Reads the currently selected text from the RStudio API and displays a data view
   in the source pane for each pipe step creating a unique object.
