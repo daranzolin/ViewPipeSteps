@@ -4,6 +4,20 @@
 ![CRAN log](http://www.r-pkg.org/badges/version/ViewPipeSteps)
 ![](http://cranlogs.r-pkg.org/badges/grand-total/ViewPipeSteps)
 
+# Installation
+
+You can install the released version of ViewPipeSteps from CRAN with:
+
+``` r
+install.packages("ViewPipeSteps")
+```
+
+Or install the development version from GitHub with:
+
+``` r
+remotes::install_github("daranzolin/ViewPipeSteps")
+```
+
 ## Overview
 
 ViewPipeSteps helps to debug pipe chains in a *slightly* more elegant

@@ -12,6 +12,21 @@ library(ViewPipeSteps)
 ![CRAN log](http://www.r-pkg.org/badges/version/ViewPipeSteps)
 ![](http://cranlogs.r-pkg.org/badges/grand-total/ViewPipeSteps)
 
+# Installation
+
+You can install the released version of ViewPipeSteps from CRAN with:
+
+```{r eval = FALSE}
+install.packages("ViewPipeSteps")
+```
+
+Or install the development version from GitHub with:
+
+```{r eval = FALSE}
+remotes::install_github("daranzolin/ViewPipeSteps")
+```
+
+
 ## Overview
 
 ViewPipeSteps helps to debug pipe chains in a *slightly* more elegant fashion. Print/View debugging isn't sexy, but instead of manually inserting `%>% View()` after each step, spice it up a bit by, e.g., highlighting the entire chain and calling the `viewPipeChain` addin:
